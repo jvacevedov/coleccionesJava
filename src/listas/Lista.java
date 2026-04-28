@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lista {
-    private List<String> listaTareas = new ArrayList<>();
+    public List<String> listaTareas = new ArrayList<>();
 
     public void agregarTarea(String tarea) {
         listaTareas.add(tarea);

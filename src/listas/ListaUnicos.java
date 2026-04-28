@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ListaUnicos {
-    private Set<String> listaLibros = new HashSet<>();
+    public Set<String> listaLibros = new HashSet<>();
     public void agregarLibro(String libro) {
         listaLibros.add(libro);
         System.out.println("Libro "+libro+ " agregado satisfactoriamente");
