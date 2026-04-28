@@ -15,8 +15,7 @@ public class DirectorioTrabajadores {
     public void mostrarTrabajadores(){
         System.out.println("Lista de trabajadores");
         listaTrabajadores.forEach((nombre, salario) ->{
-                String salarioConFormato=String.format("%,.2f",salario);
-                System.out.println(nombre + ": $" + salarioConFormato);
+                System.out.println(nombre + ": $" + darFormato(salario));
                 }
         );
 
@@ -25,8 +24,7 @@ public class DirectorioTrabajadores {
     public void actualizarSalario(String nombre,Double nuevoSalario){
         if(listaTrabajadores.containsKey(nombre)){
             listaTrabajadores.put(nombre,nuevoSalario);
-            String salarioConFormato=String.format("%,.2f",nuevoSalario);
-            System.out.println("Se ha actualizado el salario de "+ nombre+ " a $" + salarioConFormato);
+            System.out.println("Se ha actualizado el salario de "+ nombre+ " a $" + darFormato(nuevoSalario));
         } else {
             System.out.println("Trabajador no encontrado, puedes agregarlo con agregarTrabajador");
         }
@@ -37,8 +35,11 @@ public class DirectorioTrabajadores {
             acumulado+=salario;
         }
         double promedio=acumulado/listaTrabajadores.size();
-        String promedioConFormato=String.format("%,.2f",promedio);
-        System.out.println("El salario promedio es: $"+promedioConFormato);
+        System.out.println("El salario promedio es: $"+darFormato(promedio));
+    }
+
+    private String darFormato(double valor){
+        return String.format("%,.2f", valor);
     }
 
 }
